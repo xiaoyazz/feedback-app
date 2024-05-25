@@ -1,4 +1,6 @@
 import Header from "./components/Header"
+import FeedbackItem from "./components/FeedbackItem"
+import { useState } from "react"
 
 // use function to create react component
 // return jsx
@@ -29,6 +31,8 @@ function App() {
 
     // if (loading) return <h1>Loading...</h1>
 
+    const [feedback, setFeedback] = useState()
+
     return (
         // <div className="container"> {/*if I use class attribute instead of className, it will cause issue because jsx doesn't supoort all html attributes*/}
         //     <h1>{title.toUpperCase()}</h1> {/*it looks like html but it's actually jsx*/}
@@ -56,7 +60,7 @@ function App() {
         <>
             <Header></Header>
             <div className="container">
-                <h1>My App</h1>
+                <FeedbackItem></FeedbackItem>
             </div>
         </>
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import Card from './shared/Card'
+import PropTypes from 'prop-types'
 
 function FeedbackItem({ item }) {
 
@@ -16,12 +17,16 @@ function FeedbackItem({ item }) {
     // }
 
     return (
-        <Card reverse={true}>
+        <Card reverse={false}>
             <div className="num-display">{item.rating}</div>
             <div className="text-display">{item.text}</div>
             {/* <button onClick={handleClick}>Click</button> */}
         </Card>
     )
+}
+
+FeedbackItem.propTypes = {
+    item: PropTypes.object.isRequired,
 }
 
 export default FeedbackItem

@@ -1,6 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-function Card({ children, reverse }) {
+function Card({ children, reverse = false }) {
     return (
         // set the className with a condition class name
         // if reverse is true, use 'card reverse' classname with .card reverse css style
@@ -15,6 +16,15 @@ function Card({ children, reverse }) {
         // }}>{children}</div>
 
     )
+}
+
+// Card.defaultProps = {
+//     reverse: false,
+// }
+
+Card.protoTypes = {
+    children: PropTypes.node.isRequired,
+    reverse: PropTypes.bool,
 }
 
 export default Card

@@ -1,6 +1,7 @@
 import Header from "./components/Header"
-import FeedbackItem from "./components/FeedbackItem"
+import FeedbackList from "./components/FeedbackList"
 import { useState } from "react"
+import FeedbackData from "./data/FeedbackData"
 
 // use function to create react component
 // return jsx
@@ -31,7 +32,7 @@ function App() {
 
     // if (loading) return <h1>Loading...</h1>
 
-    const [feedback, setFeedback] = useState()
+    const [feedback, setFeedback] = useState(FeedbackData) // use hook to pass the FeedbackData value in the default state
 
     return (
         // <div className="container"> {/*if I use class attribute instead of className, it will cause issue because jsx doesn't supoort all html attributes*/}
@@ -60,7 +61,8 @@ function App() {
         <>
             <Header></Header>
             <div className="container">
-                <FeedbackItem></FeedbackItem>
+                {/* <FeedbackItem></FeedbackItem> Instead of using feedback item, use a feedback list component to display feedback data dynamically */}
+                <FeedbackList feedback={feedback}></FeedbackList>
             </div>
         </>
 

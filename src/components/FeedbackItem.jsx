@@ -1,10 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
+import Card from './shared/Card'
 
-function FeedbackItem() {
+function FeedbackItem({ item }) {
 
-    const [rating, setRating] = useState(7) // this hook gives default rating value
-    const [text, setText] = useState('This is a default feedback item text.')
+    // // We don't need the hard coded item once we pass item from prop
+    // const [rating, setRating] = useState(7) // this hook gives default rating value
+    // const [text, setText] = useState('This is a default feedback item text.')
 
     // const handleClick = () => {
     //     setRating((prev) => {
@@ -14,11 +16,11 @@ function FeedbackItem() {
     // }
 
     return (
-        <div className='card'>
-            <div className="num-display">{rating}</div>
-            <div className="text-display">{text}</div>
+        <Card reverse={true}>
+            <div className="num-display">{item.rating}</div>
+            <div className="text-display">{item.text}</div>
             {/* <button onClick={handleClick}>Click</button> */}
-        </div>
+        </Card>
     )
 }
 

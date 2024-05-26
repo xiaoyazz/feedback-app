@@ -2,8 +2,9 @@ import React from 'react'
 import { useState } from 'react'
 import Card from './shared/Card'
 import PropTypes from 'prop-types'
+import { FaTimes } from 'react-icons/fa'
 
-function FeedbackItem({ item }) {
+function FeedbackItem({ item, handleDelete }) { // after added the handleDelete prop in FeedbackList, it should be passed here as well
 
     // // We don't need the hard coded item once we pass item from prop
     // const [rating, setRating] = useState(7) // this hook gives default rating value
@@ -19,6 +20,7 @@ function FeedbackItem({ item }) {
     return (
         <Card reverse={false}>
             <div className="num-display">{item.rating}</div>
+            <button onClick={() => handleDelete(item.id)} className='close'><FaTimes color='purple'></FaTimes></button> {/* close button using react icon and props */}
             <div className="text-display">{item.text}</div>
             {/* <button onClick={handleClick}>Click</button> */}
         </Card>

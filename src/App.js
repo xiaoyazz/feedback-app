@@ -2,6 +2,7 @@ import Header from "./components/Header"
 import FeedbackList from "./components/FeedbackList"
 import { useState } from "react"
 import FeedbackData from "./data/FeedbackData"
+import FeedbackStats from "./components/FeedbackStats"
 
 // use function to create react component
 // return jsx
@@ -35,7 +36,10 @@ function App() {
     const [feedback, setFeedback] = useState(FeedbackData) // use hook to pass the FeedbackData value in the default state
 
     const deleteFeedback = (id) => {
-        console.log('App', id)
+        // console.log('App', id)
+        if (window.confirm('Are you sure you want to delete?')) {
+            setFeedback(feedback.filter((item) => item.id !== id))
+        }
     }
 
     return (
@@ -66,6 +70,7 @@ function App() {
             <Header></Header>
             <div className="container">
                 {/* <FeedbackItem></FeedbackItem> Instead of using feedback item, use a feedback list component to display feedback data dynamically */}
+                <FeedbackStats feedback={feedback}></FeedbackStats>
                 <FeedbackList feedback={feedback} handleDelete={deleteFeedback}></FeedbackList>
             </div>
         </>

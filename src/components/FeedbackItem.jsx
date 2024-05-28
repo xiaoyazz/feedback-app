@@ -20,7 +20,7 @@ function FeedbackItem({ item, handleDelete }) { // after added the handleDelete 
     return (
         <Card reverse={false}>
             <div className="num-display">{item.rating}</div>
-            <button onClick={() => handleDelete(item.id)} className='close'><FaTimes color='purple'></FaTimes></button> {/* close button using react icon and props */}
+            <button onClick={() => handleDelete(item.id)} className='close'><FaTimes color='black'></FaTimes></button> {/* close button using react icon and props */}
             <div className="text-display">{item.text}</div>
             {/* <button onClick={handleClick}>Click</button> */}
         </Card>

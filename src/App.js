@@ -1,8 +1,10 @@
 import Header from "./components/Header"
+import Footer from "./components/Footer"
 import FeedbackList from "./components/FeedbackList"
 import { useState } from "react"
 import FeedbackData from "./data/FeedbackData"
 import FeedbackStats from "./components/FeedbackStats"
+import FeedbackForm from "./components/FeedbackForm"
 
 // use function to create react component
 // return jsx
@@ -70,9 +72,11 @@ function App() {
             <Header></Header>
             <div className="container">
                 {/* <FeedbackItem></FeedbackItem> Instead of using feedback item, use a feedback list component to display feedback data dynamically */}
+                <FeedbackForm></FeedbackForm>
                 <FeedbackStats feedback={feedback}></FeedbackStats>
                 <FeedbackList feedback={feedback} handleDelete={deleteFeedback}></FeedbackList>
             </div>
+            <Footer></Footer>
         </>
 
     )

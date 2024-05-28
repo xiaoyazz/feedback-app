@@ -1,37 +1,35 @@
 // import React from "react";
 import PropTypes from 'prop-types'
+import { TbTextSize } from 'react-icons/tb'
 
-function Header({
-    text = 'Share Your Feedback',
+function Footer({
+    text = '© 2024 Created by Xiaoya Zou. This project is for study purposes only.',
     bgColor = 'rgba(255, 255, 255, 1)',
-    textColor = '#333'
+    textColor = '#333',
+    textSize = 10
 }) {
 
-    const headerStyles = {
+    const footerStyles = {
         backgroundColor: bgColor,
         color: textColor,
+        fontSize: textSize
     }
 
     return (
-        <header style={headerStyles}>
+        <footer style={footerStyles}>
             <div className="container">
                 <h2>{text}</h2>
             </div>
 
-        </header>
+        </footer>
     )
 }
 
-// Header.defaultProps = {
-//     text: 'Feedback Zone',
-//     bgColor: 'rgba(0,0,0,0.4)',
-//     textColor: '#ff6a95',
-// }
-
-Header.protoTypes = {
+Footer.protoTypes = {
     text: PropTypes.string,
     bgColor: PropTypes.string,
     textColor: PropTypes.string,
+    textColor: PropTypes.number,
 }
 
-export default Header
+export default Footer

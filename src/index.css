@@ -204,12 +204,12 @@ input:focus {
 /* FIX: Remove position: absolute to keep about icon at the bottom of the
  * document */
 .about-link a {
-    color: #fff;
+    color: #28caeb;
     cursor: pointer;
 }
 
 .about-link a:hover {
-    color: #28caeb;
+    color: #0083f1;
 }
 
 .about h1 {

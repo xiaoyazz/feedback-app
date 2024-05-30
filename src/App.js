@@ -8,6 +8,7 @@ import FeedbackData from "./data/FeedbackData"
 import FeedbackStats from "./components/FeedbackStats"
 import FeedbackForm from "./components/FeedbackForm"
 import AboutPage from './pages/AboutPage'
+import AboutIconLink from './components/AboutIconLink'
 
 // use function to create react component
 // return jsx
@@ -97,6 +98,7 @@ function App() {
 
                     <Route path='/about' element={<AboutPage />} />
                 </Routes>
+                <AboutIconLink></AboutIconLink>
             </div>
             <Footer></Footer>
         </Router>

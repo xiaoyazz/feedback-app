@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import FeedbackList from "./components/FeedbackList"
@@ -6,6 +7,7 @@ import { useState } from "react"
 import FeedbackData from "./data/FeedbackData"
 import FeedbackStats from "./components/FeedbackStats"
 import FeedbackForm from "./components/FeedbackForm"
+import AboutPage from './pages/AboutPage'
 
 // use function to create react component
 // return jsx
@@ -75,16 +77,29 @@ function App() {
 
 
         // </div> // must be wrapped up with a fragment or an html element
-        <>
+        <Router>
             <Header></Header>
+
             <div className="container">
                 {/* <FeedbackItem></FeedbackItem> Instead of using feedback item, use a feedback list component to display feedback data dynamically */}
-                <FeedbackForm handleAdd={addFeedback}></FeedbackForm>
-                <FeedbackStats feedback={feedback}></FeedbackStats>
-                <FeedbackList feedback={feedback} handleDelete={deleteFeedback}></FeedbackList>
+                <Routes>
+                    <Route exact path='/' element={
+                        <>
+                            <FeedbackForm handleAdd={addFeedback}></FeedbackForm>
+                            <FeedbackStats feedback={feedback}></FeedbackStats>
+                            <FeedbackList feedback={feedback} handleDelete={deleteFeedback}></FeedbackList>
+                        </>
+                    }>
+                        {/* <FeedbackForm handleAdd={addFeedback}></FeedbackForm>
+                        <FeedbackStats feedback={feedback}></FeedbackStats>
+                        <FeedbackList feedback={feedback} handleDelete={deleteFeedback}></FeedbackList> */}
+                    </Route>
+
+                    <Route path='/about' element={<AboutPage />} />
+                </Routes>
             </div>
             <Footer></Footer>
-        </>
+        </Router>
 
     )
 }

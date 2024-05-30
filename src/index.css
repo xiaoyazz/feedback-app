@@ -105,7 +105,7 @@ footer {
 }
 
 [type='radio']:checked~label {
-    background: #ff6a95;
+    background: #28caeb;
     color: #fff;
 }
 

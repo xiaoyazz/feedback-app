@@ -5,7 +5,7 @@ import Card from './shared/Card'
 import Button from './shared/Button'
 
 
-function FeedbackForm() {
+function FeedbackForm({ handleAdd }) {
 
     const [text, setText] = useState('') // for the form input
     const [rating, setRating] = useState('') // for the form rating
@@ -26,9 +26,24 @@ function FeedbackForm() {
         setText(e.target.value);
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault() // prevent from submitting an empty form
+
+        if (text.trim().length > 10) {
+            const newFeedback = {
+
+                // here use a shorthand
+                text,
+                rating
+            }
+            handleAdd(newFeedback)
+            setText('')// clear the input after submit
+        }
+    }
+
     return (
         <Card>
-            <form>
+            <form onSubmit={handleSubmit}> {/* add an event handler to handle form submit */}
                 <h2>How would you rate your service with us?</h2>
 
                 <RatingSelect select={(rating) => setRating(rating)}></RatingSelect>

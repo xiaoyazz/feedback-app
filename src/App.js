@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid'
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import FeedbackList from "./components/FeedbackList"
@@ -44,6 +45,12 @@ function App() {
         }
     }
 
+    const addFeedback = (newFeedback) => {
+        newFeedback.id = uuidv4()
+        //console.log(newFeedback)
+        setFeedback([newFeedback, ...feedback]) // add new feedback into the feedback array for the ui
+    }
+
     return (
         // <div className="container"> {/*if I use class attribute instead of className, it will cause issue because jsx doesn't supoort all html attributes*/}
         //     <h1>{title.toUpperCase()}</h1> {/*it looks like html but it's actually jsx*/}
@@ -72,7 +79,7 @@ function App() {
             <Header></Header>
             <div className="container">
                 {/* <FeedbackItem></FeedbackItem> Instead of using feedback item, use a feedback list component to display feedback data dynamically */}
-                <FeedbackForm></FeedbackForm>
+                <FeedbackForm handleAdd={addFeedback}></FeedbackForm>
                 <FeedbackStats feedback={feedback}></FeedbackStats>
                 <FeedbackList feedback={feedback} handleDelete={deleteFeedback}></FeedbackList>
             </div>

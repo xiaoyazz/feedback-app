@@ -8,6 +8,7 @@ import FeedbackData from "./data/FeedbackData"
 import FeedbackStats from "./components/FeedbackStats"
 import FeedbackForm from "./components/FeedbackForm"
 import AboutPage from './pages/AboutPage'
+import { FeedbackProvider } from './context/FeedbackContext'
 import AboutIconLink from './components/AboutIconLink'
 
 // use function to create react component
@@ -78,30 +79,32 @@ function App() {
 
 
         // </div> // must be wrapped up with a fragment or an html element
-        <Router>
-            <Header></Header>
+        <FeedbackProvider>
+            <Router>
+                <Header></Header>
 
-            <div className="container">
-                {/* <FeedbackItem></FeedbackItem> Instead of using feedback item, use a feedback list component to display feedback data dynamically */}
-                <Routes>
-                    <Route exact path='/' element={
-                        <>
-                            <FeedbackForm handleAdd={addFeedback}></FeedbackForm>
-                            <FeedbackStats feedback={feedback}></FeedbackStats>
-                            <FeedbackList feedback={feedback} handleDelete={deleteFeedback}></FeedbackList>
-                        </>
-                    }>
-                        {/* <FeedbackForm handleAdd={addFeedback}></FeedbackForm>
+                <div className="container">
+                    {/* <FeedbackItem></FeedbackItem> Instead of using feedback item, use a feedback list component to display feedback data dynamically */}
+                    <Routes>
+                        <Route exact path='/' element={
+                            <>
+                                <FeedbackForm handleAdd={addFeedback}></FeedbackForm>
+                                <FeedbackStats feedback={feedback}></FeedbackStats>
+                                <FeedbackList feedback={feedback} handleDelete={deleteFeedback}></FeedbackList>
+                            </>
+                        }>
+                            {/* <FeedbackForm handleAdd={addFeedback}></FeedbackForm>
                         <FeedbackStats feedback={feedback}></FeedbackStats>
                         <FeedbackList feedback={feedback} handleDelete={deleteFeedback}></FeedbackList> */}
-                    </Route>
+                        </Route>
 
-                    <Route path='/about' element={<AboutPage />} />
-                </Routes>
-                <AboutIconLink></AboutIconLink>
-            </div>
-            <Footer></Footer>
-        </Router>
+                        <Route path='/about' element={<AboutPage />} />
+                    </Routes>
+                    <AboutIconLink></AboutIconLink>
+                </div>
+                <Footer></Footer>
+            </Router>
+        </FeedbackProvider>
 
     )
 }

@@ -90,7 +90,7 @@ function App() {
                             <>
                                 <FeedbackForm handleAdd={addFeedback}></FeedbackForm>
                                 <FeedbackStats feedback={feedback}></FeedbackStats>
-                                <FeedbackList feedback={feedback} handleDelete={deleteFeedback}></FeedbackList>
+                                <FeedbackList handleDelete={deleteFeedback}></FeedbackList>
                             </>
                         }>
                             {/* <FeedbackForm handleAdd={addFeedback}></FeedbackForm>

@@ -1,11 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+//import PropTypes from 'prop-types'
 import { useContext } from 'react'
 import FeedbackContext from '../context/FeedbackContext'
 
 function FeedbackStats() { // no need to pass the prop because we get it from the context now
 
-    const { feedback } = useContext(FeedbackContext)
+    const { feedback } = useContext(FeedbackContext) // now the number of reviews can be updated dynamiclly with context
 
     // calculate reading avrage
     let average = feedback.reduce((acc, cur) => {
@@ -22,8 +22,8 @@ function FeedbackStats() { // no need to pass the prop because we get it from th
     )
 }
 
-FeedbackStats.propTypes = {
-    feedback: PropTypes.array.isRequired,
-}
+// FeedbackStats.propTypes = {
+//     feedback: PropTypes.array.isRequired,
+// }
 
 export default FeedbackStats

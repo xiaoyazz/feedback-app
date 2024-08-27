@@ -1,7 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useContext } from 'react'
+import FeedbackContext from '../context/FeedbackContext'
 
-function FeedbackStats({ feedback }) {
+function FeedbackStats() { // no need to pass the prop because we get it from the context now
+
+    const { feedback } = useContext(FeedbackContext)
 
     // calculate reading avrage
     let average = feedback.reduce((acc, cur) => {

@@ -5,7 +5,7 @@ import FeedbackItem from './FeedbackItem'
 //import PropTypes from 'prop-types'
 import FeedbackContext from '../context/FeedbackContext'
 
-function FeedbackList({ handleDelete }) { // destructured
+function FeedbackList() { // destructured
 
     const { feedback } = useContext(FeedbackContext) // with this, the feedback is from the context instead of the data js file
 
@@ -23,7 +23,10 @@ function FeedbackList({ handleDelete }) { // destructured
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                     >
-                        <FeedbackItem key={item.id} item={item} handleDelete={handleDelete}></FeedbackItem>
+                        <FeedbackItem
+                            key={item.id}
+                            item={item}
+                        ></FeedbackItem>
                     </motion.div>
                 ))} {/* feedback passed as a prop */}
             </AnimatePresence>

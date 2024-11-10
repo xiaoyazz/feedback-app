@@ -2,9 +2,11 @@ import React from 'react'
 import { useState } from 'react'
 import Card from './shared/Card'
 import PropTypes from 'prop-types'
-import { FaTimes } from 'react-icons/fa'
+import { FaTimes, FaEdit } from 'react-icons/fa'
+import { useContext } from 'react'
+import FeedbackContext from '../context/FeedbackContext'
 
-function FeedbackItem({ item, handleDelete }) { // after added the handleDelete prop in FeedbackList, it should be passed here as well
+function FeedbackItem({ item }) { // after added the handleDelete prop in FeedbackList, it should be passed here as well
 
     // // We don't need the hard coded item once we pass item from prop
     // const [rating, setRating] = useState(7) // this hook gives default rating value
@@ -17,10 +19,13 @@ function FeedbackItem({ item, handleDelete }) { // after added the handleDelete 
     //     })
     // }
 
+    const { deleteFeedback } = useContext(FeedbackContext)
+
     return (
         <Card reverse={false}>
             <div className="num-display">{item.rating}</div>
-            <button onClick={() => handleDelete(item.id)} className='close'><FaTimes color='black'></FaTimes></button> {/* close button using react icon and props */}
+            <button onClick={() => deleteFeedback(item.id)} className='close'><FaTimes color='black'></FaTimes></button> {/* close button using react icon and props */}
+            <button className="edit"><FaEdit color='black'></FaEdit></button>
             <div className="text-display">{item.text}</div>
             {/* <button onClick={handleClick}>Click</button> */}
         </Card>

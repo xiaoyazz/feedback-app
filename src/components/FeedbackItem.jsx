@@ -19,13 +19,13 @@ function FeedbackItem({ item }) { // after added the handleDelete prop in Feedba
     //     })
     // }
 
-    const { deleteFeedback } = useContext(FeedbackContext)
+    const { deleteFeedback, updateFeedback } = useContext(FeedbackContext)
 
     return (
         <Card reverse={false}>
             <div className="num-display">{item.rating}</div>
             <button onClick={() => deleteFeedback(item.id)} className='close'><FaTimes color='black'></FaTimes></button> {/* close button using react icon and props */}
-            <button className="edit"><FaEdit color='black'></FaEdit></button>
+            <button onClick={() => updateFeedback(item)} className="edit"><FaEdit color='black'></FaEdit></button>
             <div className="text-display">{item.text}</div>
             {/* <button onClick={handleClick}>Click</button> */}
         </Card>

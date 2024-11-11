@@ -14,7 +14,7 @@ function FeedbackForm() {
     const [btnDisabled, setBtnDisabled] = useState(true)
     const [message, setMessage] = useState('') // empty by default
 
-    const { addFeedback, feedbackEdit } = useContext(FeedbackContext)
+    const { addFeedback, feedbackEdit, editFeedbackItem } = useContext(FeedbackContext)
 
     // add use effect
     useEffect(() => {
@@ -50,7 +50,11 @@ function FeedbackForm() {
                 text,
                 rating
             }
-            addFeedback(newFeedback)
+            if (feedbackEdit.edit === true) {
+                editFeedbackItem(feedbackEdit.item.id, newFeedback)
+            } else {
+                addFeedback(newFeedback)
+            }
             setText('')// clear the input after submit
         }
     }

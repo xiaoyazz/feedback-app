@@ -127,6 +127,11 @@ input:focus {
     outline: none;
 }
 
+img {
+    width: 50%;
+}
+
+
 .feedback-stats {
     color: #333;
     display: flex;

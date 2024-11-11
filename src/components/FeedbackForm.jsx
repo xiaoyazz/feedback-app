@@ -1,19 +1,30 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import RatingSelect from './RatingSelect'
 import React from 'react'
 import Card from './shared/Card'
 import Button from './shared/Button'
 import FeedbackContext from '../context/FeedbackContext'
+import ratings from '../assets/ratings.jpg'
 
 function FeedbackForm() {
 
     // state
     const [text, setText] = useState('') // for the form input
-    const [rating, setRating] = useState('') // for the form rating
+    const [rating, setRating] = useState(10) // for the form rating
     const [btnDisabled, setBtnDisabled] = useState(true)
     const [message, setMessage] = useState('') // empty by default
 
-    const { addFeedback } = useContext(FeedbackContext)
+    const { addFeedback, feedbackEdit } = useContext(FeedbackContext)
+
+    // add use effect
+    useEffect(() => {
+        //console.log("Hello")
+        if (feedbackEdit.edit === true) {
+            setBtnDisabled(false)
+            setText(feedbackEdit.item.text) // set the textfield with feedback text when user wants to edit
+            setRating(feedbackEdit.item.rating)
+        }
+    }, [feedbackEdit])
 
     const handleTextChange = (e) => {
         if (text === '') {

@@ -52,7 +52,7 @@ function FeedbackForm() {
             }
             if (feedbackEdit.edit === true) {
                 editFeedbackItem(feedbackEdit.item.id, newFeedback)
-                feedbackEdit.edit === false
+                feedbackEdit.edit = false // reset the edit status
             } else {
                 addFeedback(newFeedback)
             }

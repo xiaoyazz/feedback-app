@@ -53,6 +53,14 @@ export const FeedbackProvider = ({ children }) => {
         })
     }
 
+    // reset
+    // const resetFeedbackEdit = (item) => {
+    //     setFeedbackEdit({
+    //         item,
+    //         edit: false
+    //     });
+    // };
+
     // A function to edit the feedback item
     const editFeedbackItem = (id, updItem) => {
         //console.log(id, updItem)
@@ -69,8 +77,7 @@ export const FeedbackProvider = ({ children }) => {
         addFeedback,
         deleteFeedback,
         updateFeedback, // the updateFeedback function
-        editFeedbackItem
-
+        editFeedbackItem,
     }}>
         {children}
     </FeedbackContext.Provider>

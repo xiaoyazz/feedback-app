@@ -9,11 +9,18 @@ function AboutPage() {
                 <h1>About This Project</h1>
 
                 <p>
-                    This is a React app to leave feedback for a product or service.
+                    This is a React app designed for users to provide feedback on products or services.
                 </p>
 
                 <p>
-                    Version: 1.0.0
+                    <b>Developer: </b>Xiaoya Zou
+                </p>
+                <p>
+                    <b>Purpose: </b>Created as a study project to enhance understanding of React development and user interaction.
+                </p>
+
+                <p>
+                    <b>Version: </b>1.0.0
                 </p>
 
                 <p>

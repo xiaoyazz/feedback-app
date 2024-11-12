@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from "./components/Header"
-import Footer from "./components/Footer"
 import FeedbackList from "./components/FeedbackList"
 import FeedbackStats from "./components/FeedbackStats"
 import FeedbackForm from "./components/FeedbackForm"
@@ -40,7 +39,6 @@ function App() {
                     </Routes>
                     <AboutIconLink></AboutIconLink>
                 </div>
-                <Footer></Footer>
             </Router>
         </FeedbackProvider>
 

@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 function Header({
     text = 'Share Your Feedback',
-    bgColor = 'rgba(255, 255, 255, 1)',
-    textColor = '#333'
+    bgColor = 'rgba(0,0,0,0.4)',
+    textColor = '#ff6a95'
 }) {
 
     const headerStyles = {

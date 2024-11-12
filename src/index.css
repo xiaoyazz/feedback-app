@@ -8,7 +8,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #ececec;
+    background-color: #202142;
     color: #fff;
     line-height: 1.6;
 }
@@ -24,15 +24,6 @@ ul {
 }
 
 header {
-    height: 70px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-footer {
     height: 70px;
     width: 100%;
     display: flex;
@@ -96,7 +87,7 @@ footer {
 
 .rating li:hover,
 .num-display {
-    background: #28caeb;
+    background: #ff6a95;
     color: #fff;
 }
 
@@ -105,7 +96,7 @@ footer {
 }
 
 [type='radio']:checked~label {
-    background: #28caeb;
+    background: #ff6a95;
     color: #fff;
 }
 
@@ -127,13 +118,8 @@ input:focus {
     outline: none;
 }
 
-img {
-    width: 50%;
-}
-
-
 .feedback-stats {
-    color: #333;
+    color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -174,7 +160,7 @@ img {
 }
 
 .btn-secondary {
-    background: #28caeb;
+    background: #ff6a95;
 }
 
 .btn:hover {
@@ -209,12 +195,12 @@ img {
 /* FIX: Remove position: absolute to keep about icon at the bottom of the
  * document */
 .about-link a {
-    color: #28caeb;
+    color: #fff;
     cursor: pointer;
 }
 
 .about-link a:hover {
-    color: #0083f1;
+    color: #ff6a95;
 }
 
 .about h1 {

@@ -29,7 +29,7 @@ Footer.protoTypes = {
     text: PropTypes.string,
     bgColor: PropTypes.string,
     textColor: PropTypes.string,
-    textColor: PropTypes.number,
+    // textColor: PropTypes.number,
 }
 
 export default Footer
